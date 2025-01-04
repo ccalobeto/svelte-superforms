@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { superForm } from 'sveltekit-superforms/client';
+	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
+
 	export let data;
 
 	const { form } = superForm(data.form);
-	console.log(form);
 </script>
 
+<SuperDebug data={form} />
 <div class="form-wrapper">
 	<form method="POST">
 		<label for="name">First Name</label>
