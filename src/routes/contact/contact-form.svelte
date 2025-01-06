@@ -1,55 +1,47 @@
 <script lang="ts">
 	import * as Form from '$lib/components/ui/form/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
-	import { userSchema, type UserSchema } from './schema';
+	import { emailSchema, type EmailSchema } from './schema';
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
-	let { data }: { data: SuperValidated<Infer<typeof userSchema>> } = $props();
+	let { data }: { data: SuperValidated<Infer<typeof emailSchema>> } = $props();
 
 	const form = superForm(data, {
-		validators: zodClient(userSchema)
+		validators: zodClient(emailSchema)
 	});
 
 	const { form: formData, enhance } = form;
 </script>
 
 <form method="POST" use:enhance>
-	<Form.Field {form} name="firstName">
+	<Form.Field {form} name="from">
 		<Form.Control>
 			{#snippet children({ props })}
-				<Form.Label>First Name</Form.Label>
-				<Input {...props} bind:value={$formData.firstName} />
+				<Form.Label>from:</Form.Label>
+				<Input {...props} bind:value={$formData.from} />
 			{/snippet}
 		</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>
-	<Form.Field {form} name="lastName">
+	<Form.Field {form} name="subject">
 		<Form.Control>
 			{#snippet children({ props })}
-				<Form.Label>Last Name</Form.Label>
-				<Input {...props} bind:value={$formData.lastName} />
+				<Form.Label>subject</Form.Label>
+				<Input {...props} bind:value={$formData.subject} />
 			{/snippet}
 		</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>
-	<Form.Field {form} name="email">
+	<Form.Field {form} name="message">
 		<Form.Control>
 			{#snippet children({ props })}
-				<Form.Label>E-mail</Form.Label>
-				<Input {...props} bind:value={$formData.email} />
+				<Form.Label>message</Form.Label>
+				<Input {...props} bind:value={$formData.message} />
 			{/snippet}
 		</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>
-	<Form.Field {form} name="employeeNumber">
-		<Form.Control>
-			{#snippet children({ props })}
-				<Form.Label>Employee Number</Form.Label>
-				<Input type="number" {...props} bind:value={$formData.employeeNumber} />
-			{/snippet}
-		</Form.Control>
-		<Form.FieldErrors />
-	</Form.Field>
+
 	<Form.Button>Submit</Form.Button>
 </form>

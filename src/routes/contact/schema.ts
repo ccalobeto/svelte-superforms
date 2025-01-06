@@ -1,10 +1,9 @@
 import { z } from "zod"
 
-export const userSchema = z.object({
-  firstName: z.string().min(1),
-  lastName: z.string().min(1),
-  email: z.string().email(),
-  employeeNumber: z.number().min(1)
+export const emailSchema = z.object({
+  from: z.string().email(),
+  subject: z.string().min(1),
+  message: z.string().min(1),
 })
 
-export type UserSchema = typeof userSchema
+export type EmailSchema = typeof emailSchema
