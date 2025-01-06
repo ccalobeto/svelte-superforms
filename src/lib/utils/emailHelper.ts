@@ -1,21 +1,19 @@
 import nodemailer from "nodemailer";
-
-const USERGMAIL = "leon.calobeto@gmail.com";
-const APPKEYGMAIL = "iojq betc qosx rsqb";
+import { GOOGLE_EMAIL, GOOGLE_APP_PASSWORD } from "$env/static/private";
 
 const emailHelper = async (from: string, subject: string, text: string) => {
   // create a transporter
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: USERGMAIL,
-      pass: APPKEYGMAIL,
+      user: GOOGLE_EMAIL,
+      pass: GOOGLE_APP_PASSWORD,
     },
   });
 
   const mailOptions = {
     from: from,
-    to: USERGMAIL,
+    to: GOOGLE_EMAIL,
     subject: subject,
     text: text
   };
