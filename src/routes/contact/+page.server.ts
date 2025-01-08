@@ -1,7 +1,7 @@
 import type { PageServerLoad, Actions } from "./$types";
 import { superValidate } from "sveltekit-superforms/server"
 import { zod } from "sveltekit-superforms/adapters";
-import { emailSchema } from "./schema";
+import { emailSchema } from "../../lib/utils/schema";
 import { fail } from "@sveltejs/kit";
 import emailHelper from "$lib/utils/emailHelper";
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	// import SuperDebug from 'sveltekit-superforms';
 	import type { PageData } from './$types.js';
-	import SettingsForm from './contact-form.svelte';
+	import SettingsForm from '$lib/components/ContactForm.svelte';
 	export let data: PageData;
 </script>
 
