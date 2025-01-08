@@ -20,6 +20,7 @@ export const actions: Actions = {
         form,
       });
     }
+    console.log('**this is +page.server.ts**');
     const { from, subject, message } = form.data;
     try {
       const emailResponse = await emailHelper(from, subject, message);
