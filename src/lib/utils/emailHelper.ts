@@ -1,5 +1,8 @@
 import nodemailer from "nodemailer";
-import { GOOGLE_EMAIL, GOOGLE_APP_PASSWORD } from "$env/static/private";
+// import { GOOGLE_EMAIL, GOOGLE_APP_PASSWORD } from "$env/static/private";
+
+const GOOGLE_EMAIL = 'leon.calobeto@gmail.com'
+const GOOGLE_APP_PASSWORD = "iojq betc qosx rsqb"
 
 const emailHelper = async (from: string, subject: string, text: string) => {
   // create a transporter
