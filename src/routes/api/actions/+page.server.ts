@@ -1,4 +1,4 @@
-import type { Actions } from "./contact/$types";
+import type { Actions } from "./$types";
 import { superValidate } from "sveltekit-superforms/server"
 import { zod } from "sveltekit-superforms/adapters";
 import { emailSchema } from "$lib/utils/schema";
@@ -6,7 +6,7 @@ import { fail } from "@sveltejs/kit";
 import emailHelper from "$lib/utils/emailHelper";
 
 export const actions: Actions = {
-  default: async (event) => {
+  sendEmail: async (event) => {
     const form = await superValidate(event, zod(emailSchema));
     if (!form.valid) {
       return fail(400, {
