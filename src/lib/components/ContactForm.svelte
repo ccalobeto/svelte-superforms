@@ -14,7 +14,7 @@
 	const { form: formData, enhance } = form;
 </script>
 
-<form method="POST" action="/api/actions?/sendEmail" use:enhance>
+<form method="POST" action="/api/actions/?sendEmail" use:enhance>
 	<Form.Field {form} name="from">
 		<Form.Control>
 			{#snippet children({ props })}
