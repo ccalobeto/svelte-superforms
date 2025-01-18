@@ -1,9 +1,9 @@
 # Project
-This project use super forms to send an email for contact
+This project use shadcn superforms and nodemailer to send emails.
 
-## Steps
+## What i've done
 - Build the form using superforms and shadcn-svelte.
-- Create a helper function to send emails.
-- Catch the fields of the form and pass them to the helper function.
-- Use secrets for best practices 
+- Use nodemailer to send emails.
+- The form interacts with the server and is not working in github pages because of static sites.
+- I still can't send mails with nodemailer and gmail. 
 
